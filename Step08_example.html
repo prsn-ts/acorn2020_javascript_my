@@ -31,6 +31,8 @@
         .addEventListener("click", function(){
             //1. 입력한 이름을 읽어오고 inputName에 저장
             var inputName = document.querySelector("#inputName").value;
+            //검색된 데이터가 존재 하는지 여부
+
             //2. 배열(friends)에서 동일한 이름을 가지고 있는 {}를 찾는다.
             for(var i=0; i<friends.length; i++){
                 var Searched = friends[i];
@@ -40,10 +42,16 @@
                     //document.querySelector("#console").innerHTML = JSON.stringify(Searched); -> 오브젝트 자체를 출력하고 싶을 때 JSON을 이용해 나타냄.
                     document.querySelector("#console").innerHTML = Searched.name+Searched.phone+Searched.email;
                     break; //for 문도 탈출이 가능 할까?(for문 반복으로 인해 결과가 겹쳐서 나오는 문제) -> 해결됨!
-                }else{
-                    document.querySelector("#console").innerText =
+
+                    //검색된 이름이 존재한다고 표시 한다.
+                    isExist=true;
+                }         
+            }
+            //for문 종료 후에 if 문 블럭에 실행순서가 갔었는지
+            //여부를 알고 싶다면??
+            if(isExist==false){
+                document.querySelector("#console").innerText = 
                     inputName+" 으로 검색된 정보는 없습니다.";
-                }
             }
         });
 
