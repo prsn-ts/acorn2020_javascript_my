@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step11_ECMA6.html</title>
+</head>
+<body>
+    <h1>ECMAScript6 테스트중..</h1>
+    <script>
+        for(let i=0; i<5; i++){
+            console.log(i); //i 는 for 문
+        } /*let 예약어를 사용해 변수를 만들면 특정 범위(중괄호, 블럭{})안에서만 유효하다.
+         -> var보다 좀더 작은 범위만에만 변수를 적용시키고 싶을 때 사용하면 좋다.
+            반대로 var은 let 보다 넓은 범위에서 사용될 수 있어서 다양한 곳에서 많이 참조될 변수에 쓰면 좋다. */
+        if(true) {
+            let myName = "김구라";
+        } // myName는 if문 밖에서 사용할 수 없다. -> 블럭 범위 한정의 let 을 사용했기 때문.
+
+        /*상수(수정불가한 변수도 만들 수 있다.) 
+        -> const로 선언한 경우 다른 참조값으로 수정할 수 없다.(단, 참조값이 변경되지않고 배열이나 오브젝트 같이 안에 있는 값만 변경하려는 경우는 됨.) */
+        const PI = 3.14159;
+        //PI=100; //오류
+
+        //let PI = 3.14; //상수로 선언한 것을 다시 선언할 수 없다.
+    </script>
+</body>
+</html>
