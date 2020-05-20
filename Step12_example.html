@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step12_example.html</title>
+</head>
+<body>
+    <h1>createElement 테스트중...</h1>
+    <ul id="friendList">
+
+    </ul>
+    <script>
+        //친구 이름이 들어 있는 배열
+        const names=["김구라","해골","원숭이","주뎅이","덩어리"];
+        /*
+            배열에 들어있는 친구이름을 이용해서
+            <li>김구라</li>
+            와 같은 요소를 동적을 만들어서
+            ul 요소에 append 해 보세요. (페이지 로딩 시점에)
+        */
+        /* 
+        모든 구문은 for문 안에서 실행한다.
+        1. 리스트 요소를 만들어서 list 변수에 저장한다.
+        2. 리스트 요소에 innertext 값으로 names의 배열에 있는 값들을 넣는다.
+        3. 만든 리스트를 ul요소안에 집어넣는다.
+        
+        for(var i=0; i<names.length; i++){
+            //리스트 요소를 만들어서 list 변수에 저장한다.
+            var list = document.createElement("li");
+            //리스트 요소에 innertext 값으로 names의 배열에 있는 값들을 넣는다.
+            list.innerText = names[i];
+            //만든 리스트를 ul요소안에 집어넣는다.
+            document.querySelector("#friendList").append(list);
+        }
+        */
+        // forEach을 적용한 javascript 처리.
+        names.forEach(function(item, index){
+            var list = document.createElement("li");
+            list.innerText = names[index];
+            document.querySelector("#friendList").append(list);
+        })
+        
+        
+        
+
+    </script>
+</body>
+</html>
