@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step10_string.html</title>
+</head>
+<body>
+    <h1>string type 테스트중..</h1>
+    <script>
+        /*
+            string type 도 객체이다.
+            객체는 저장소(속성) 과 기능(functiom) 으로 구성된다.
+        */
+        var line = "abcd/@!@#!$/가나다라";
+        // string type 의 저장소 참조 
+        var size = line.length;
+        // string type 의 기능 사용
+        var result = line.replace("e", "EEE");
+        var result2 = line.substring(1, 6);
+        var result3 = line.split("/");
+
+        // back tick 문자를 이용해서 문자열을 만들수도 있다.(여러줄로 나눠서 이어쓰기가 가능.)
+        // back tick 문자열 형식은 ECMAScript6 에서 추가됨
+        // 지금 까지 배운거는 ECMAScript5 버전
+        var info = `
+            내이름은 김구라
+            너의 이름은 산군
+            한말
+            두말`;
+
+        var myName = "산신령";
+        var yourName = "금도끼";
+
+        var info2 = `나의 이름 : ${myName} , 너의 이름 : ${yourName}`;
+    </script>
+</body>
+</html>
