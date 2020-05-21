@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step13_lotto.html</title>
+</head>
+<body>
+    <h1>lotto 추첨기 만들기</h1>
+    <button id="lotto">추첨 돌리기</button>
+    <p id="print"></p>
+    <script>
+        // 1~45 사이의 랜덤한 정수 얻어내기
+        var lottoNum = parseInt(Math.random()*45)+1;
+        
+        /* //순서대로 수행하기
+        1. 로또 번호 6개를 랜덤하게 얻어내서 nums 배열에 저장해 보세요.
+        2. nums 배열에 저장된 숫자를 p 요소에 순서대로 출력해 보세요.
+        */
+        document.querySelector("#lotto")
+        .addEventListener("click", ()=>{
+            if(count != 0){
+                document.querySelector("#print").innerText = null;
+            }
+            var nums = [];
+                while(true){
+                    //랜덤한 숫자를 nums 배열에 저장.
+                    nums.push(parseInt(Math.random()*45)+1);
+                    if(nums.length == 6){
+                        break;
+                    }
+                }
+                var count=0;
+                nums.forEach(function(item, index){
+                    document.querySelector("#print").append(item+" ");
+                    count++;
+                });
+        });
+    </script>
+</body>
+</html>
