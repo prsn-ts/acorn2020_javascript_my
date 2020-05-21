@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Step13_lotto2-1.html</title>
+    <style>
+        #wrapper img{
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>lotto 추첨기 만들기</h1>
+    <button id="lotto">추첨 돌리기</button>
+    <div id="wrapper">
+
+    </div>
+    <script>
+        let lotto_check = false; //forEach가 실행됐었는지 여부 조사 변수.
+        //추첨 돌리기 버튼을 눌렀을 때 작동
+
+        document.querySelector("#lotto")
+        .addEventListener("click", ()=>{
+            //추첨 돌리기 버튼을 누를 때마다 한번만 로또번호가 나오도록 처리.
+            if(lotto_check == true){
+                document.querySelector("#wrapper").innerText = null;
+            }
+
+            //빈 배열 nums 선언.
+            var nums = [];
+                //몇번 수행될지 모르는 반복문을 while문으로 처리.
+                while(true){
+                    //랜덤한 숫자를 nums 배열에 저장.
+                    nums.push(parseInt(Math.random()*45)+1);
+                    //배열안에 값들이 다 찾는지 검사하는 부분. -> 다 찾으면 while문 빠져나가기.
+                    if(nums.length == 6){
+                        break;
+                    }
+                }
+                //p요소에 배열안에 값을 출력해주는 forEach 함수
+                nums.forEach(function(item, index){
+                    //nums 배열에 있는 숫자값들을 이용해서 img 요소 만들기
+                    var img = document.createElement("img");
+                    img.setAttribute("src", "images/lotto-ball-"+item+".png");
+
+                    //div 공간에다가 img요소 추가하기
+                    document.querySelector("#wrapper").append(img);
+                });
+                lotto_check = true; // true로 변환함으로써 forEach 실행했다는 사실을 기억.
+        });
+    </script>
+</body>
+</html>
