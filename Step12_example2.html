@@ -37,9 +37,16 @@
             newLi.innerText = inputvalue;
             //4. ul 요소안에 배치시킨다.
             document.querySelector("#toDoList").append(newLi);
-            //5. 만든 li 요소에 click 리스너 함수 등록하기
+            //실습예제 - 만든 li 요소에 click 리스너 함수 등록하기(li를 클릭했을 시 콘솔창에 "li를 클릭했네??"를 출력.)
             newLi.addEventListener("click", function(){
                 console.log("li를 클릭했네??");
+            });
+            //실습예제 - li 요소를 선택했을 때 삭제하시겠습니까? 조건부를 넣어서 예를 누르면 삭제, 아니면 그냥 냅두게하기
+            newLi.addEventListener("click", function(){
+                let isDelete = confirm("리스트를 삭제하시겠습니까?");
+                if(isDelete){
+                    this.remove(); //선택한 요소를 HTML 문서에서 제거함.
+                }
             });
         });
 
