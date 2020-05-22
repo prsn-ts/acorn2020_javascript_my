@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Step13_lotto2-1.html</title>
+    <title>Step13_lotto1.html</title>
 </head>
 <body>
     <h1>lotto 추첨기 만들기</h1>
@@ -17,30 +17,24 @@
         1. 로또 번호 6개를 랜덤하게 얻어내서 nums 배열에 저장해 보세요.
         2. nums 배열에 저장된 숫자를 p 요소에 순서대로 출력해 보세요.
         */
-        let lotto_check = false; //forEach가 실행됐었는지 여부 조사 변수.
-        //추첨 돌리기 버튼을 눌렀을 때 작동
         document.querySelector("#lotto")
         .addEventListener("click", ()=>{
-            //추첨 돌리기 버튼을 누를 때마다 한번만 로또번호가 나오도록 처리.
-            if(lotto_check == true){
+            if(count != 0){
                 document.querySelector("#print").innerText = null;
             }
-            //빈 배열 nums 선언.
             var nums = [];
-                //몇번 수행될지 모르는 반복문을 while문으로 처리.
                 while(true){
                     //랜덤한 숫자를 nums 배열에 저장.
                     nums.push(parseInt(Math.random()*45)+1);
-                    //배열안에 값들이 다 찾는지 검사하는 부분. -> 다 찾으면 while문 빠져나가기.
                     if(nums.length == 6){
                         break;
                     }
                 }
-                //p요소에 배열안에 값을 출력해주는 forEach 함수
+                var count=0;
                 nums.forEach(function(item, index){
                     document.querySelector("#print").append(item+" ");
+                    count++;
                 });
-                lotto_check = true;
         });
     </script>
 </body>
