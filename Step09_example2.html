@@ -42,6 +42,7 @@
         .addEventListener("mousedown", function(event){
             //이벤트가 일어난 좌표에서 선을 그릴 준비를 한다.
             //console.log(event);
+
             //이벤트가 일어난 곳의 좌표 얻어오기
             var x = event.offsetX;
             var y = event.offsetY;
@@ -57,6 +58,7 @@
         .addEventListener("mousemove", function(event){
             //만일 현재 그리고 있는 상태가 아니면 함수를 여기서 종료한다.
             if(!isDrawing){
+
                 return;
             }
 
@@ -74,6 +76,7 @@
             context.closePath();
         });
 
+                                                   
         //색상을 선택했을 때 실행할 함수 등록
         document.querySelector("#selectedColor")
         .addEventListener("change", function(){
