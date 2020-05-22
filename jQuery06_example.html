@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery06_example.html</title>
+</head>
+<body>
+    <h1>jQuery 예제</h1>
+    <input type="text" id="inputMsg"/>
+    <button id="addBtn">추가</button>
+    <ul id="msgList">
+
+    </ul>
+    <script src="js/jquery-3.5.1.js"></script>
+    <script>
+        //추가 버튼을 눌렀을 때 실행할 함수 등록
+        $("#addBtn").on("click", function(){
+            //입력한 문자열을 읽어온다.
+            let msg = $("#inputMsg").val();
+            let btn = $("<button>").text("x");
+            //li 요소를 만들어서 msg 출력하고 #msgList 에 추가하기
+            $("<li>").text(msg).appendTo("#msgList");
+            //입력창 지우고 포커스도 주기
+            $("#inputMsg").val("").focus();
+            //이름이 "X"인 button 요소를 만들어서 #msgList에 추가하기
+            btn.appendTo("#msgList");
+
+            $("button").on("click", function(){
+                $(this).siblings().remove();
+            });
+        });
+    </script>
+</body>
+</html>
