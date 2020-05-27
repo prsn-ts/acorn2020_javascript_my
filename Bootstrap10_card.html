@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap10_card.html</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+<body>
+    <div class="container-md"> <!-- 미디엄 이상의 디바이스에 container 클래스 속성을 적용함. -->
+        <h1>기본 card</h1>
+        <div class="card">
+            <div class="card-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam esse quibusdam quisquam pariatur voluptatem itaque soluta? Laudantium hic a repellat asperiores, alias voluptatibus, quidem culpa amet sit nostrum blanditiis nesciunt.
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <!-- 칼럼(col) 안에 card 클래스를 지정해서 card css를 적용. -->
+                <div class="card">
+                    <div class="card-body text-primary"> <!-- text-primary -> 글자색 파란색 지정.-->
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam esse quibusdam quisquam pariatur voluptatem itaque soluta? Laudantium hic a repellat asperiores, alias voluptatibus, quidem culpa amet sit nostrum blanditiis nesciunt.
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card">
+                    <div class="card-body text-secondary"> <!-- text-primary -> 글자색 회색? 지정.-->
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam esse quibusdam quisquam pariatur voluptatem itaque soluta? Laudantium hic a repellat asperiores, alias voluptatibus, quidem culpa amet sit nostrum blanditiis nesciunt.
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card shadow"> <!-- shadow 클래스 지정 시 해당 공간에 그림자 효과 부여. -->
+                    <div class="card-body text-primary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam esse quibusdam quisquam pariatur voluptatem itaque soluta? Laudantium hic a repellat asperiores, alias voluptatibus, quidem culpa amet sit nostrum blanditiis nesciunt.
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card shadow"> <!-- shadow 클래스 지정 시 해당 공간에 그림자 효과 부여. -->
+                    <div class="card-body text-secondary">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam esse quibusdam quisquam pariatur voluptatem itaque soluta? Laudantium hic a repellat asperiores, alias voluptatibus, quidem culpa amet sit nostrum blanditiis nesciunt.
+                    </div>
+                </div>
+            </div>
+        </div> <!-- //.row 클래스 끝나는 부분 명시. -->
+        <h1>card header 와 footer</h1>
+        <div class="row">
+            <div class="col-sm">
+                <div class="card">
+                    <!-- card 클래스 안에 header, body, footer 클래스로 공간 분할 가능. -->
+                    <div class="card-header">header</div>
+                    <div class="card-body">body</div>
+                    <div class="card-footer">footer</div>
+                </div>
+            </div>
+            <div class="col-sm">
+                <div class="card">
+                    <div class="header">
+                        <h2>Android</h2>
+                    </div>
+                    <div class="card-body">
+                        <p>운영체제가 Android 입니다.</p>
+                    </div>
+                    <div class="card-footer">
+                        <a href="#" class="btn btn-primary">구입하기</a>
+                    </div>
+                </div>
+            </div>
+        </div><!-- //.row 클래스 끝나는 부분 명시. -->
+        <h1>card 이미지</h1>
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <img src="images/image1.png" class="card-img-top"/> <!-- card 클래스 안에 이미지 상단 테두리를 둥글게함. -->
+                    <div class="card-body">
+                        <h4 class="card-title">소녀시대</h4>
+                        <p class="card-text">아무말1아무말2</p>
+                        <a href="#" class="btn btn-info">Profile</a>
+                    </div>
+                </div>
+            </div> <!-- //.col 클래스 끝나는 부분 명시.-->
+            <div class="col">
+                <div class="card">
+                    
+                    <div class="card-body">
+                        <h4 class="card-title">소녀시대</h4>
+                        <p class="card-text">아무말1아무말2</p>
+                        <a href="#" class="btn btn-info stretched-link">Profile</a> <!-- stretched-link -> a태그의 링크범위가 card 클래스 적용한 공간 전체로 늘어남. -->
+                    </div>
+                    <img src="images/image1.png" class="card-img-bottom"/> <!-- card 클래스 안에 이미지 하단 테두리를 둥글게함. -->
+                </div>
+            </div>
+        </div>
+    </div> <!-- //.container 클래스 끝나는 부분 명시. -->
+</body>
+</html>
